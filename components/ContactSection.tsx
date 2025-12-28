@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Card from "./ui/Card";
 import { companyInfo } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 
 export default function ContactSection() {
   return (
@@ -11,7 +12,7 @@ export default function ContactSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/pdf/page_16_img_1.jpeg"
+          src={withBasePath("/images/pdf/page_16_img_1.jpeg")}
           alt="Contact Background"
           fill
           className="object-cover"

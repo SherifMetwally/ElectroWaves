@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { withBasePath } from "@/lib/basePath";
 
 export default function AboutSection() {
   return (
@@ -12,7 +13,7 @@ export default function AboutSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/pdf/page_27_img_1.jpeg"
+          src={withBasePath("/images/pdf/page_27_img_1.jpeg")}
           alt="About Us Background"
           fill
           className="object-cover"

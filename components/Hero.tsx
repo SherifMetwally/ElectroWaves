@@ -5,6 +5,7 @@ import Image from "next/image";
 import Badge from "./ui/Badge";
 import Button from "./ui/Button";
 import { companyInfo, brandMessage, marketPosition } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Hero() {
   return (
@@ -16,7 +17,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary-dark/95 z-10" />
         <Image
-          src="/images/pdf/page_25_img_1.jpeg"
+          src={withBasePath("/images/pdf/page_25_img_1.jpeg")}
           alt="Electro Waves"
           fill
           className="object-cover"
@@ -79,7 +80,7 @@ export default function Hero() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/logo.png"
+                src={withBasePath("/images/logo.png")}
                 alt={companyInfo.name}
                 width={600}
                 height={600}

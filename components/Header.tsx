@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { withBasePath } from "@/lib/basePath";
 
 interface HeaderProps {
   forceScrolled?: boolean;
@@ -48,7 +49,7 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
             <a href="/" className="flex items-center space-x-2">
               <div className="relative w-20 h-12 sm:w-24 sm:h-14 md:w-28 md:h-16">
                 <Image
-                  src={isScrolled ? "/images/logo-colored.png" : "/images/logo.png"}
+                  src={isScrolled ? withBasePath("/images/logo-colored.png") : withBasePath("/images/logo.png")}
                   alt="Electro Waves"
                   fill
                   className="object-contain"

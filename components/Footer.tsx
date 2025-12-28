@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { companyInfo } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -44,7 +45,7 @@ export default function Footer() {
             <div className="mb-6">
               <div className="relative w-32 h-20 mb-4">
                 <Image
-                  src="/images/logo.png"
+                  src={withBasePath("/images/logo.png")}
                   alt={companyInfo.name}
                   fill
                   className="object-contain"
