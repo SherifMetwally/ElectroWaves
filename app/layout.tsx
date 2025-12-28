@@ -22,19 +22,19 @@ export default function RootLayout({
                 <path
                   d="M0,100 Q75,50 150,100 T300,100"
                   fill="none"
-                  stroke="rgba(40, 94, 115, 0.25)"
+                  stroke="rgba(255, 255, 255, 0.15)"
                   strokeWidth="3"
                 />
                 <path
                   d="M0,150 Q75,100 150,150 T300,150"
                   fill="none"
-                  stroke="rgba(40, 94, 115, 0.2)"
+                  stroke="rgba(255, 255, 255, 0.12)"
                   strokeWidth="2.5"
                 />
                 <path
                   d="M0,50 Q75,0 150,50 T300,50"
                   fill="none"
-                  stroke="rgba(40, 94, 115, 0.2)"
+                  stroke="rgba(255, 255, 255, 0.12)"
                   strokeWidth="2.5"
                 />
                 <animateTransform
@@ -49,7 +49,7 @@ export default function RootLayout({
                 <path
                   d="M0,90 Q62.5,45 125,90 T250,90"
                   fill="none"
-                  stroke="rgba(40, 94, 115, 0.18)"
+                  stroke="rgba(255, 255, 255, 0.1)"
                   strokeWidth="2"
                 />
                 <animateTransform

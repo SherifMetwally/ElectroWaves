@@ -19,8 +19,8 @@ export default function ContactSection() {
           priority
           unoptimized
         />
-        {/* Gradient Overlay - Fully opaque at top, 80% at bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/90 to-white/80 z-10" />
+        {/* Gradient Overlay - Using primary color */}
+        <div className="absolute inset-0 bg-primary/80 z-10" />
       </div>
       
       <div className="relative z-20">
@@ -32,10 +32,10 @@ export default function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Get In Touch
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-200 max-w-2xl mx-auto">
             Contact us to discuss your electrical panel needs and discover how we can help power your success
           </p>
         </motion.div>
@@ -48,10 +48,10 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <Card className="p-8 text-center h-full">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Card className="p-8 text-center h-full group hover:bg-white transition-all duration-300">
+              <div className="w-16 h-16 bg-white group-hover:bg-primary rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300">
                 <svg
-                  className="w-8 h-8 text-primary"
+                  className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -64,10 +64,10 @@ export default function ContactSection() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">Email</h3>
+              <h3 className="text-xl font-bold text-white group-hover:text-primary mb-2 transition-colors duration-300">Email</h3>
               <a
                 href={`mailto:${companyInfo.email}`}
-                className="text-primary hover:text-primary-dark transition-colors"
+                className="text-white group-hover:text-primary-dark transition-colors duration-300"
               >
                 {companyInfo.email}
               </a>
@@ -81,10 +81,10 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card className="p-8 text-center h-full">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Card className="p-8 text-center h-full group hover:bg-white transition-all duration-300">
+              <div className="w-16 h-16 bg-white group-hover:bg-primary rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300">
                 <svg
-                  className="w-8 h-8 text-primary"
+                  className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -97,13 +97,13 @@ export default function ContactSection() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">Phone</h3>
+              <h3 className="text-xl font-bold text-white group-hover:text-primary mb-2 transition-colors duration-300">Phone</h3>
               <div className="space-y-1">
                 {companyInfo.phone.map((phone, index) => (
                   <a
                     key={index}
                     href={`tel:${phone}`}
-                    className="block text-primary hover:text-primary-dark transition-colors"
+                    className="block text-white group-hover:text-primary-dark transition-colors duration-300"
                   >
                     {phone}
                   </a>
@@ -119,10 +119,10 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Card className="p-8 text-center h-full">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Card className="p-8 text-center h-full group hover:bg-white transition-all duration-300">
+              <div className="w-16 h-16 bg-white group-hover:bg-primary rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300">
                 <svg
-                  className="w-8 h-8 text-primary"
+                  className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -141,8 +141,8 @@ export default function ContactSection() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">Address</h3>
-              <p className="text-neutral-600 leading-relaxed">
+              <h3 className="text-xl font-bold text-white group-hover:text-primary mb-2 transition-colors duration-300">Address</h3>
+              <p className="text-white group-hover:text-primary leading-relaxed transition-colors duration-300">
                 {companyInfo.address}
               </p>
             </Card>

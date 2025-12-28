@@ -39,7 +39,7 @@ const BenefitIcon = ({ index }: { index: number }) => {
         type: "spring",
         stiffness: 200
       }}
-      className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center text-2xl shadow-lg"
+      className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-dark group-hover:bg-primary flex items-center justify-center text-2xl shadow-lg transition-colors duration-300"
     >
       {icons[index] || "✓"}
     </motion.div>
@@ -50,38 +50,8 @@ export default function ServicesSection() {
   return (
     <section 
       id="services" 
-      className="relative py-24 bg-gradient-to-b from-white/95 via-neutral-50/95 to-white/95 overflow-hidden"
+      className="relative py-24 overflow-hidden"
     >
-      {/* Electric Waves Pattern */}
-      <div className="absolute inset-0 opacity-10 z-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" className="w-full h-full" preserveAspectRatio="none">
-          <defs>
-            <pattern id="electricWave-services" x="0" y="0" width="300" height="200" patternUnits="userSpaceOnUse">
-              <path
-                d="M0,100 Q75,50 150,100 T300,100"
-                fill="none"
-                stroke="rgba(40, 94, 115, 0.3)"
-                strokeWidth="3"
-              />
-              <path
-                d="M0,150 Q75,100 150,150 T300,150"
-                fill="none"
-                stroke="rgba(40, 94, 115, 0.25)"
-                strokeWidth="2.5"
-              />
-              <animateTransform
-                attributeName="patternTransform"
-                type="translate"
-                values="0,0; 300,0; 0,0"
-                dur="20s"
-                repeatCount="indefinite"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#electricWave-services)" />
-        </svg>
-      </div>
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Section */}
         <motion.div
@@ -91,28 +61,14 @@ export default function ServicesSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-20"
         >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-block mb-6"
-          >
-            <span className="px-4 py-2 bg-gradient-to-r from-primary/10 to-accent-cyan/10 text-primary font-semibold rounded-full border border-primary/20">
-              {whatWeDo.title}
-            </span>
-          </motion.div>
-          
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
           >
-            <span className="bg-gradient-to-r from-primary via-primary-dark to-primary bg-clip-text text-transparent">
-              {whatWeDo.title}
-            </span>
+            {whatWeDo.title}
           </motion.h2>
           
           <motion.p
@@ -120,7 +76,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-neutral-600 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-lg md:text-xl text-neutral-200 max-w-4xl mx-auto mb-12 leading-relaxed"
           >
             {whatWeDo.context}
           </motion.p>
@@ -152,15 +108,13 @@ export default function ServicesSection() {
                 }}
                 className="group relative"
               >
-                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-neutral-100 hover:border-primary/30 h-full">
+                <div className="bg-gradient-to-br from-primary-dark/50 via-primary/30 to-primary-dark/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 hover:border-white/40 hover:bg-white h-full">
                   <div className="flex flex-col items-center text-center space-y-4">
                     <BenefitIcon index={index} />
-                    <h3 className="text-base font-semibold text-neutral-800 group-hover:text-primary transition-colors">
+                    <h3 className="text-base font-semibold text-white group-hover:text-primary transition-colors duration-300">
                       {benefit}
                     </h3>
                   </div>
-                  {/* Hover effect gradient */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
                 </div>
               </motion.div>
             ))}
@@ -215,7 +169,7 @@ export default function ServicesSection() {
               }}
               className="group"
             >
-              <Card className="overflow-hidden h-full flex flex-col bg-white border-2 border-neutral-100 hover:border-primary/30 transition-all duration-300 shadow-lg hover:shadow-2xl">
+              <Card className="overflow-hidden h-full flex flex-col bg-gradient-to-br from-primary-dark/50 via-primary/30 to-primary-dark/50 border-2 border-white/20 hover:border-white/40 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-2xl group">
                 {/* Service Image with Hover Effect */}
                 {serviceImageMap[service.title] && (
                   <motion.div 
@@ -236,12 +190,12 @@ export default function ServicesSection() {
                 )}
                 <div className="p-6 flex-grow flex flex-col">
                   <motion.h3 
-                    className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-primary transition-colors"
+                    className="text-xl font-bold text-white group-hover:text-primary mb-3 transition-colors duration-300"
                     whileHover={{ x: 5 }}
                   >
                     {service.title}
                   </motion.h3>
-                  <p className="text-neutral-600 leading-relaxed text-sm flex-grow">
+                  <p className="text-neutral-200 group-hover:text-primary leading-relaxed text-sm flex-grow transition-colors duration-300">
                     {service.description}
                   </p>
                   {/* Decorative line */}

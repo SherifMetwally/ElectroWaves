@@ -15,7 +15,7 @@ const featuredProjects = clients.slice(0, 2);
 
 export default function NewsSection() {
   return (
-    <section id="projects" className="py-20 bg-neutral-100">
+    <section id="projects" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -29,7 +29,7 @@ export default function NewsSection() {
             <Badge variant="default" className="mb-3">
               Clients & Partnership
             </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mt-2">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-2">
               Our Featured Projects
             </h2>
           </div>
@@ -54,7 +54,7 @@ export default function NewsSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="h-full"
             >
-              <Card className="overflow-hidden h-full flex flex-col">
+              <Card className="overflow-hidden h-full flex flex-col group hover:bg-white transition-all duration-300">
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden flex-shrink-0">
                   <Image
@@ -74,10 +74,10 @@ export default function NewsSection() {
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold text-neutral-900 mb-3">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-primary mb-3 transition-colors duration-300">
                     {project.name}
                   </h3>
-                  <p className="text-neutral-600 mb-4 leading-relaxed flex-grow">
+                  <p className="text-neutral-200 group-hover:text-primary mb-4 leading-relaxed flex-grow transition-colors duration-300">
                     {project.description}
                   </p>
                   <Link

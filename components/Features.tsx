@@ -23,7 +23,7 @@ export default function Features() {
   return (
     <section
       id="about"
-      className="py-20 bg-neutral-50"
+      className="py-20"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -33,10 +33,10 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Our Core Values
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-200 max-w-2xl mx-auto">
             Engineering intelligence, operational discipline, and predictive quality
           </p>
         </motion.div>
@@ -50,12 +50,12 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="p-8 h-full">
-                <div className="text-primary mb-4">{getIcon(index)}</div>
-                <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+              <Card className="p-8 h-full group transition-all duration-300 hover:bg-white">
+                <div className="text-white group-hover:text-primary mb-4 transition-colors duration-300">{getIcon(index)}</div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-primary mb-4 transition-colors duration-300">
                   {value.title}
                 </h3>
-                <p className="text-neutral-600 leading-relaxed">
+                <p className="text-neutral-200 group-hover:text-primary leading-relaxed transition-colors duration-300">
                   {value.description}
                 </p>
               </Card>

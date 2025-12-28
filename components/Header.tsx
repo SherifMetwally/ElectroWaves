@@ -38,7 +38,7 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white shadow-md py-2"
+          ? "bg-primary-dark/90 backdrop-blur-sm shadow-md py-2"
           : "bg-transparent py-3"
       }`}
     >
@@ -49,7 +49,7 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
             <a href="/" className="flex items-center space-x-2">
               <div className="relative w-20 h-12 sm:w-24 sm:h-14 md:w-28 md:h-16">
                 <Image
-                  src={isScrolled ? withBasePath("/images/logo-colored.png") : withBasePath("/images/logo.png")}
+                  src={withBasePath("/images/logo.png")}
                   alt="Electro Waves"
                   fill
                   className="object-contain"
@@ -64,65 +64,61 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <a
               href={getHref("#home")}
-              className={`transition-colors font-medium ${
-                isScrolled ? "text-neutral-700 hover:text-primary" : "text-white hover:text-accent-yellow"
-              }`}
+              className="transition-colors font-medium text-white hover:text-accent-yellow"
             >
               Home
             </a>
             <a
               href={getHref("#about")}
-              className={`transition-colors font-medium ${
-                isScrolled ? "text-neutral-700 hover:text-primary" : "text-white hover:text-accent-yellow"
-              }`}
+              className="transition-colors font-medium text-white hover:text-accent-yellow"
             >
               Our Core Values
             </a>
             <a
               href={getHref("#services")}
-              className={`transition-colors font-medium ${
-                isScrolled ? "text-neutral-700 hover:text-primary" : "text-white hover:text-accent-yellow"
-              }`}
+              className="transition-colors font-medium text-white hover:text-accent-yellow"
             >
               Services
             </a>
             <a
               href={getHref("#industries")}
-              className={`transition-colors font-medium ${
-                isScrolled ? "text-neutral-700 hover:text-primary" : "text-white hover:text-accent-yellow"
-              }`}
+              className="transition-colors font-medium text-white hover:text-accent-yellow"
             >
               Industries
             </a>
             <a
               href={getHref("#projects")}
-              className={`transition-colors font-medium ${
-                isScrolled ? "text-neutral-700 hover:text-primary" : "text-white hover:text-accent-yellow"
-              }`}
+              className="transition-colors font-medium text-white hover:text-accent-yellow"
             >
               Projects
             </a>
             <a
               href={getHref("#market-position")}
-              className={`transition-colors font-medium ${
-                isScrolled ? "text-neutral-700 hover:text-primary" : "text-white hover:text-accent-yellow"
-              }`}
+              className="transition-colors font-medium text-white hover:text-accent-yellow"
             >
               Market Position
             </a>
             <a
               href={getHref("#ceo")}
-              className={`transition-colors font-medium ${
-                isScrolled ? "text-neutral-700 hover:text-primary" : "text-white hover:text-accent-yellow"
-              }`}
+              className="transition-colors font-medium text-white hover:text-accent-yellow"
             >
               CEO Message
             </a>
             <a
+              href={getHref("#mission-vision")}
+              className="transition-colors font-medium text-white hover:text-accent-yellow"
+            >
+              Mission & Vision
+            </a>
+            <a
+              href={getHref("#about-us")}
+              className="transition-colors font-medium text-white hover:text-accent-yellow"
+            >
+              About
+            </a>
+            <a
               href={getHref("#contact")}
-              className={`transition-colors font-medium ${
-                isScrolled ? "text-neutral-700 hover:text-primary" : "text-white hover:text-accent-yellow"
-              }`}
+              className="transition-colors font-medium text-white hover:text-accent-yellow"
             >
               Contact
             </a>
@@ -156,60 +152,74 @@ export default function Header({ forceScrolled = false }: HeaderProps) {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-neutral-200">
+          <div className="md:hidden mt-4 pb-4 border-t border-white/20">
             <nav className="flex flex-col space-y-4 pt-4">
               <a
                 href={getHref("#home")}
-                className="text-neutral-700 hover:text-primary font-medium"
+                className="text-white hover:text-accent-yellow font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
               </a>
               <a
                 href={getHref("#about")}
-                className="text-neutral-700 hover:text-primary font-medium"
+                className="text-white hover:text-accent-yellow font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Our Core Values
               </a>
               <a
                 href={getHref("#services")}
-                className="text-neutral-700 hover:text-primary font-medium"
+                className="text-white hover:text-accent-yellow font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
               </a>
               <a
                 href={getHref("#industries")}
-                className="text-neutral-700 hover:text-primary font-medium"
+                className="text-white hover:text-accent-yellow font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Industries
               </a>
               <a
                 href={getHref("#projects")}
-                className="text-neutral-700 hover:text-primary font-medium"
+                className="text-white hover:text-accent-yellow font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Projects
               </a>
               <a
                 href={getHref("#market-position")}
-                className="text-neutral-700 hover:text-primary font-medium"
+                className="text-white hover:text-accent-yellow font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Market Position
               </a>
               <a
                 href={getHref("#ceo")}
-                className="text-neutral-700 hover:text-primary font-medium"
+                className="text-white hover:text-accent-yellow font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 CEO Message
               </a>
               <a
+                href={getHref("#mission-vision")}
+                className="text-white hover:text-accent-yellow font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Mission & Vision
+              </a>
+              <a
+                href={getHref("#about-us")}
+                className="text-white hover:text-accent-yellow font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </a>
+              <a
                 href={getHref("#contact")}
-                className="text-neutral-700 hover:text-primary font-medium"
+                className="text-white hover:text-accent-yellow font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact

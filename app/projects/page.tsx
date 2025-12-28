@@ -14,11 +14,11 @@ import { getProjectImage } from "@/lib/images";
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-primary">
       <Header forceScrolled={true} />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-primary/10 to-white">
+      <section className="pt-32 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -29,10 +29,10 @@ export default function ProjectsPage() {
             <Badge variant="default" className="mb-4">
               Clients & Partnership
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Our Featured Projects
             </h1>
-            <p className="text-lg text-neutral-600">
+            <p className="text-lg text-neutral-200">
               Explore our portfolio of successful electrical panel installations across various industries
             </p>
           </motion.div>
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {clients.map((project, index) => (
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: (index % 6) * 0.1 }}
               >
-                <Card className="overflow-hidden h-full flex flex-col">
+                <Card className="overflow-hidden h-full flex flex-col group hover:bg-white transition-all duration-300">
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden">
                     <Image
@@ -72,13 +72,13 @@ export default function ProjectsPage() {
 
                   {/* Content */}
                   <div className="p-6 flex-grow flex flex-col">
-                    <h3 className="text-2xl font-bold text-neutral-900 mb-2">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-primary mb-2 transition-colors duration-300">
                       {project.name}
                     </h3>
-                    <p className="text-sm text-neutral-500 mb-4">
+                    <p className="text-sm text-neutral-300 group-hover:text-primary mb-4 transition-colors duration-300">
                       {project.location}
                     </p>
-                    <p className="text-neutral-600 mb-4 leading-relaxed flex-grow">
+                    <p className="text-neutral-200 group-hover:text-primary mb-4 leading-relaxed flex-grow transition-colors duration-300">
                       {project.description}
                     </p>
                     <div className="mt-auto">
@@ -95,7 +95,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-20 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -6,7 +6,7 @@ import { ceoMessage } from "@/lib/content";
 
 export default function CEOSection() {
   return (
-    <section id="ceo" className="py-20 bg-neutral-50">
+    <section id="ceo" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -16,15 +16,15 @@ export default function CEOSection() {
             transition={{ duration: 0.6 }}
           >
             <Card className="p-8 md:p-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 {ceoMessage.title}
               </h2>
-              <p className="text-lg text-neutral-600 leading-relaxed mb-8 italic">
+              <p className="text-lg text-neutral-200 leading-relaxed mb-8 italic">
                 {ceoMessage.message}
               </p>
-              <div className="border-t border-neutral-200 pt-6">
-                <p className="text-xl font-bold text-primary">{ceoMessage.name}</p>
-                <p className="text-neutral-600">{ceoMessage.position}</p>
+              <div className="border-t border-white/20 pt-6">
+                <p className="text-2xl font-bold text-white mb-2">{ceoMessage.name}</p>
+                <p className="text-neutral-200 text-lg">{ceoMessage.position}</p>
               </div>
             </Card>
           </motion.div>

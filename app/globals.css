@@ -6,9 +6,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 25, 61, 74;
+  --background-end-rgb: 25, 61, 74;
 }
 
 * {
@@ -23,12 +23,7 @@ html {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #193d4a;
   font-family: 'Inter', system-ui, sans-serif;
 }
 
@@ -97,7 +92,7 @@ body {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.08;
+  opacity: 0.25;
 }
 
 .electric-waves-svg svg {

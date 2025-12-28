@@ -13,7 +13,7 @@ export default function Card({ children, className = "", hover = true }: CardPro
 
   return (
     <div
-      className={`bg-white rounded-2xl shadow-md overflow-hidden ${hoverStyles} ${className}`}
+      className={`bg-gradient-to-br from-primary-dark/50 via-primary/30 to-primary-dark/50 rounded-2xl shadow-md overflow-hidden border border-white/10 ${hoverStyles} ${className}`}
     >
       {children}
     </div>
