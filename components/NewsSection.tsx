@@ -2,11 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import Card from "./ui/Card";
 import Badge from "./ui/Badge";
 import Button from "./ui/Button";
 import { clients } from "@/lib/content";
 import { getProjectImage } from "@/lib/images";
+import { withBasePath } from "@/lib/basePath";
 
 // Use first 2 clients as featured projects
 const featuredProjects = clients.slice(0, 2);
@@ -32,12 +34,12 @@ export default function NewsSection() {
             </h2>
           </div>
           <div className="mt-6 md:mt-0">
-            <a href="/projects">
+            <Link href={withBasePath("/projects")}>
               <Button variant="secondary" className="flex items-center gap-2">
                 <span>View All Projects</span>
                 <span className="w-2 h-2 rounded-full bg-neutral-900" />
               </Button>
-            </a>
+            </Link>
           </div>
         </motion.div>
 
@@ -50,10 +52,11 @@ export default function NewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="h-full"
             >
-              <Card className="overflow-hidden">
+              <Card className="overflow-hidden h-full flex flex-col">
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-64 overflow-hidden flex-shrink-0">
                   <Image
                     src={getProjectImage(project.name)}
                     alt={project.name}
@@ -70,20 +73,20 @@ export default function NewsSection() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold text-neutral-900 mb-3">
                     {project.name}
                   </h3>
-                  <p className="text-neutral-600 mb-4 leading-relaxed">
+                  <p className="text-neutral-600 mb-4 leading-relaxed flex-grow">
                     {project.description}
                   </p>
-                  <a
-                    href={`/projects#project-${project.id}`}
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-semibold transition-colors"
+                  <Link
+                    href={withBasePath(`/projects#project-${project.id}`)}
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-semibold transition-colors mt-auto"
                   >
                     <span className="w-2 h-2 rounded-full bg-primary" />
                     Learn More
-                  </a>
+                  </Link>
                 </div>
               </Card>
             </motion.div>

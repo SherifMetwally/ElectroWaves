@@ -2,7 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  basePath: '/ElectroWaves',
+  // Only use basePath in production (for GitHub Pages)
+  // In development, basePath should be empty so we can access localhost:3000/
+  basePath: process.env.NODE_ENV === 'production' ? '/ElectroWaves' : '',
   trailingSlash: true,
   images: {
     unoptimized: true, // Required for static export
