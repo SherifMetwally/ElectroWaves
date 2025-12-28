@@ -34,7 +34,7 @@ export default function NewsSection() {
             </h2>
           </div>
           <div className="mt-6 md:mt-0">
-            <Link href={withBasePath("/projects")}>
+            <Link href="/projects">
               <Button variant="secondary" className="flex items-center gap-2">
                 <span>View All Projects</span>
                 <span className="w-2 h-2 rounded-full bg-neutral-900" />
@@ -81,7 +81,7 @@ export default function NewsSection() {
                     {project.description}
                   </p>
                   <Link
-                    href={withBasePath(`/projects#project-${project.id}`)}
+                    href={`/projects#project-${project.id}`}
                     className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-semibold transition-colors mt-auto"
                   >
                     <span className="w-2 h-2 rounded-full bg-primary" />

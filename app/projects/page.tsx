@@ -11,7 +11,6 @@ import Button from "@/components/ui/Button";
 import ScrollToTop from "@/components/ScrollToTop";
 import { clients } from "@/lib/content";
 import { getProjectImage } from "@/lib/images";
-import { withBasePath } from "@/lib/basePath";
 
 export default function ProjectsPage() {
   return (
@@ -110,7 +109,7 @@ export default function ProjectsPage() {
             <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
               Contact us today to discuss your electrical panel needs
             </p>
-            <Link href={withBasePath("/#contact")}>
+            <Link href="/#contact">
               <Button variant="secondary">Get In Touch</Button>
             </Link>
           </motion.div>

@@ -78,7 +78,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden">
               <Image
                 src={withBasePath("/images/logo.png")}
                 alt={companyInfo.name}
